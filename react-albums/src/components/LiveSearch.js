@@ -8,9 +8,9 @@ export default function LiveSearch(props) {
   const [term, setTerm] = useState('');
   const [results, setResults] = useState([]);
   useEffect(() => {
-      axios.get('https://itunes.apple.com/search?term=coldplay&country=CA&media=music&entity=album&attribute=artistTerm').then(response => {
+      axios.get(`https://itunes.apple.com/search?term=${term}&country=CA&media=music&entity=album&attribute=artistTerm`).then(response => {
       setResults([...response.data.results])
-      console.log(response.data.results);
+      //console.log(response.data.results);
     });
   }, [term])
 
