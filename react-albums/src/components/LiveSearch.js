@@ -5,12 +5,12 @@ import Results from "components/Results";
 const axios = require('axios');
 
 export default function LiveSearch(props) {
-  const [term, setTerm] = useState("");
+  const [term, setTerm] = useState('');
   const [results, setResults] = useState([]);
   useEffect(() => {
-    const testURL = 'https://itunes.apple.com/search?term=beyonce&country=CA&media=music&entity=album&attribute=artistTerm';
-    axios.get(testURL).then(response => {
-      console.log(response);
+      axios.get('https://itunes.apple.com/search?term=coldplay&country=CA&media=music&entity=album&attribute=artistTerm').then(response => {
+      setResults([...response.data.results])
+      console.log(response.data.results);
     });
   }, [term])
 
