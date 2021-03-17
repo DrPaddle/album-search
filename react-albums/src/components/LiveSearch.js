@@ -47,7 +47,7 @@ export default function LiveSearch(props) {
     }));
 
     prev.current = search.term;
-
+    //axios call
     axios
       .get(
         `https://itunes.apple.com/search?term=${search.term}&country=CA&media=music&entity=album&attribute=artistTerm`
